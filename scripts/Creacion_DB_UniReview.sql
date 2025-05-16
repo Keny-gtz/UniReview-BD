@@ -21,9 +21,10 @@ CREATE TABLE IF NOT EXISTS `UniReview`.`usuario` (
   `idusuario` INT NOT NULL AUTO_INCREMENT,
   `usu_nombre` VARCHAR(100) NOT NULL,
   `usu_email` VARCHAR(100) NOT NULL,
-  `usu_telefono` INT(10) UNSIGNED NOT NULL,
+  `usu_telefono` VARCHAR(10) NOT NULL,
   `usu_password` VARCHAR(45) NOT NULL,
   `usu_fechaNacimiento` DATE NOT NULL,
+  `usu_foto_perfil` VARCHAR(500) NULL,
   PRIMARY KEY (`idusuario`))
 ENGINE = InnoDB;
 
@@ -52,34 +53,34 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `UniReview`.`publicaciones`
+-- Table `UniReview`.`publicacion`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `UniReview`.`publicaciones` (
-  `idpublicaciones` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `UniReview`.`publicacion` (
+  `idpublicacion` INT NOT NULL AUTO_INCREMENT,
   `publi_comentario` VARCHAR(830) NOT NULL,
   `publi_fecha` DATE NOT NULL,
-  `publi_calificación` INT UNSIGNED NOT NULL,
-  `usuario_idusuario_fk` INT NOT NULL,
+  `publi_calificacion` INT UNSIGNED NOT NULL,
+  `idusuario_fk` INT NOT NULL,
   `publi_etiqueta` VARCHAR(45) NULL,
   `publi_tipo_usuario` VARCHAR(45) NOT NULL,
-  `escuela_idescuela_fk` INT NOT NULL,
-  `carrera_idcarrera_fk` INT NOT NULL,
-  PRIMARY KEY (`idpublicaciones`),
-  INDEX `fk_publicaciones_usuario_idx` (`usuario_idusuario_fk` ASC) VISIBLE,
-  INDEX `fk_publicaciones_escuela1_idx` (`escuela_idescuela_fk` ASC) VISIBLE,
-  INDEX `fk_publicaciones_carrera1_idx` (`carrera_idcarrera_fk` ASC) VISIBLE,
+  `idescuela_fk` INT NOT NULL,
+  `idcarrera_fk` INT NOT NULL,
+  PRIMARY KEY (`idpublicacion`),
+  INDEX `fk_publicaciones_usuario_idx` (`idusuario_fk` ASC) VISIBLE,
+  INDEX `fk_publicaciones_escuela1_idx` (`idescuela_fk` ASC) VISIBLE,
+  INDEX `fk_publicaciones_carrera1_idx` (`idcarrera_fk` ASC) VISIBLE,
   CONSTRAINT `fk_publicaciones_usuario`
-    FOREIGN KEY (`usuario_idusuario_fk`)
+    FOREIGN KEY (`idusuario_fk`)
     REFERENCES `UniReview`.`usuario` (`idusuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_publicaciones_escuela1`
-    FOREIGN KEY (`escuela_idescuela_fk`)
+    FOREIGN KEY (`idescuela_fk`)
     REFERENCES `UniReview`.`escuela` (`idescuela`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_publicaciones_carrera1`
-    FOREIGN KEY (`carrera_idcarrera_fk`)
+    FOREIGN KEY (`idcarrera_fk`)
     REFERENCES `UniReview`.`carrera` (`idcarrera`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -87,23 +88,23 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `UniReview`.`oferta educativa`
+-- Table `UniReview`.`ofertaEducativa`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `UniReview`.`oferta educativa` (
-  `id_oferta_educativa` INT NOT NULL AUTO_INCREMENT,
-  `ofed_enlace` VARCHAR(200) NOT NULL,
-  `escuela_idescuela_fk` INT NOT NULL,
-  `carrera_idcarrera_fk` INT NOT NULL,
-  PRIMARY KEY (`id_oferta_educativa`),
-  INDEX `fk_oferta educativa_escuela1_idx` (`escuela_idescuela_fk` ASC) VISIBLE,
-  INDEX `fk_oferta educativa_carrera1_idx` (`carrera_idcarrera_fk` ASC) VISIBLE,
+CREATE TABLE IF NOT EXISTS `UniReview`.`ofertaEducativa` (
+  `idoferta_educativa` INT NOT NULL AUTO_INCREMENT,
+  `ofed_enlace` VARCHAR(500) NOT NULL,
+  `idescuela_fk` INT NOT NULL,
+  `idcarrera_fk` INT NOT NULL,
+  PRIMARY KEY (`idoferta_educativa`),
+  INDEX `fk_oferta educativa_escuela1_idx` (`idescuela_fk` ASC) VISIBLE,
+  INDEX `fk_oferta educativa_carrera1_idx` (`idcarrera_fk` ASC) VISIBLE,
   CONSTRAINT `fk_oferta educativa_escuela1`
-    FOREIGN KEY (`escuela_idescuela_fk`)
+    FOREIGN KEY (`idescuela_fk`)
     REFERENCES `UniReview`.`escuela` (`idescuela`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_oferta educativa_carrera1`
-    FOREIGN KEY (`carrera_idcarrera_fk`)
+    FOREIGN KEY (`idcarrera_fk`)
     REFERENCES `UniReview`.`carrera` (`idcarrera`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
