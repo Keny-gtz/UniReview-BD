@@ -35,7 +35,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `UniReview`.`escuela` (
   `idescuela` INT NOT NULL AUTO_INCREMENT,
   `esc_nombre` VARCHAR(100) NOT NULL,
-  `esc_estado` VARCHAR(100) NOT NULL,
+  `esc_ubicacion` VARCHAR(100) NOT NULL,
   `esc_enlace` VARCHAR(200) NOT NULL,
   PRIMARY KEY (`idescuela`))
 ENGINE = InnoDB;

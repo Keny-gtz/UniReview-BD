@@ -23,14 +23,14 @@ INSERT INTO usuario(idusuario, usu_nombre, usu_email, usu_telefono, usu_password
 VALUES (null, 'Kenya Gutierrez', 'kenya.gtz.n@gmail.com', 5533404343, 'Kenya789', '1999-09-22', "");
 
 -- CREACIÓN DE ESCUELAS
-INSERT INTO escuela (idescuela, esc_nombre, esc_estado, esc_enlace)
+INSERT INTO escuela (idescuela, esc_nombre, esc_ubicacion, esc_enlace)
 VALUES 
-(null, 'Instituto Tecnológico de Reynosa', 'Tamaulipas', 'https://www.reynosa.tecnm.mx/'),
+(null, 'Instituto Tecnológico de Reynosa', 'Reynosa, Tamaulipas', 'https://www.reynosa.tecnm.mx/'),
 (null,'Centro de Investigación y de Estudios Avanzados del Instituto Politécnico Nacional', 'Ciudad de México', 'https://www.cinvestav.mx/'),
 (null,'Universidad Nacional Autónoma de México', 'Ciudad de México', 'https://www.unam.mx/'),
 (null,'Instituto Tecnológico de Tláhuac', 'Ciudad de México', 'https://tlahuac2.tecnm.mx/'),
 (null,'Escuela Superior de Educación Física', 'Ciudad de México', 'https://www.aefcm.gob.mx/dgenam/ESEF/'), 
-(null,'Enseñanza e Investigación Superior, A.C. (UNIVERSIDAD TECMILENIO)', 'Jalisco', 'https://www.tecmilenio.mx/es'); 
+(null,'Enseñanza e Investigación Superior, A.C. (UNIVERSIDAD TECMILENIO)', 'Guadalajara, Jalisco', 'https://www.tecmilenio.mx/es'); 
 
 -- CREACIÓN DE CARRERAS
 -- Carrera #1
