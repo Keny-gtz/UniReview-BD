@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `UniReview`.`usuario` (
   `usu_nombre` VARCHAR(100) NOT NULL,
   `usu_email` VARCHAR(100) NOT NULL,
   `usu_telefono` VARCHAR(10) NOT NULL,
-  `usu_password` VARCHAR(45) NOT NULL,
+  `usu_password` VARCHAR(255) NOT NULL,
   `usu_fechaNacimiento` DATE NOT NULL,
   `usu_foto_perfil` VARCHAR(500) NULL,
   PRIMARY KEY (`idusuario`))
