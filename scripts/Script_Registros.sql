@@ -3,24 +3,24 @@ SELECT * FROM usuario;
 SELECT * FROM escuela;
 SELECT * FROM carrera;
 SELECT * FROM publicacion;
-SELECT * FROM ofertaEducativa;
+SELECT * FROM ofertaeducativa;
 
 -- CREACIÓN DE USUARIOS
 -- Usuario #1
 INSERT INTO usuario(idusuario, usu_nombre, usu_email, usu_telefono, usu_password, usu_fechaNacimiento, usu_foto_perfil)
-VALUES (1, "María Luisa", "luisa.montesrmz@gmail.com", "8994232792", "mlmr2397P", "1997-11-08", "https://res.cloudinary.com/dnnna4gud/image/upload/v1747420256/y5gsqo910wulockrr6ya.jpg");
+VALUES (1, "María Luisa", "luisa.montesrmz@gmail.com", "8994232792", "mlmr2397P", "1997-11-08", "https://res.cloudinary.com/dnnna4gud/image/upload/v1747435914/blank-pp_e1sbed.webp");
 -- Usuario #2
 INSERT INTO usuario(idusuario, usu_nombre, usu_email, usu_telefono, usu_password, usu_fechaNacimiento, usu_foto_perfil)
-VALUES (null, "Itzel Muñoz", "itzel.munoz@gmail.com", "899428933", "1234Pass", "2001-10-13", "");
+VALUES (null, "Itzel Muñoz", "itzel.munoz@gmail.com", "899428933", "1234Pass", "2001-10-13", "https://res.cloudinary.com/dnnna4gud/image/upload/v1747435914/blank-pp_e1sbed.webp");
 -- Usuario #3
 INSERT INTO usuario(idusuario, usu_nombre, usu_email, usu_telefono, usu_password, usu_fechaNacimiento, usu_foto_perfil)
-VALUES (null, 'Diego Angeles', 'jdiego@gmail.com', 7296400073, 'Diego456', '2002-06-03', "");
+VALUES (null, 'Diego Angeles', 'jdiego@gmail.com', 7296400073, 'Diego456', '2002-06-03', "https://res.cloudinary.com/dnnna4gud/image/upload/v1747435914/blank-pp_e1sbed.webp");
 -- Usuario #4
 INSERT INTO usuario(idusuario, usu_nombre, usu_email, usu_telefono, usu_password, usu_fechaNacimiento, usu_foto_perfil)
-VALUES (null, 'Raúl Ramírez', 'raulramirez.glez00@gmail.com', 3338227686, 'Raul321pas', '1999-07-10', "");
+VALUES (null, 'Raúl Ramírez', 'raulramirez.glez00@gmail.com', 3338227686, 'Raul321pas', '1999-07-10', "https://res.cloudinary.com/dnnna4gud/image/upload/v1747435914/blank-pp_e1sbed.webp");
 -- Usuario #5
 INSERT INTO usuario(idusuario, usu_nombre, usu_email, usu_telefono, usu_password, usu_fechaNacimiento, usu_foto_perfil)
-VALUES (null, 'Kenya Gutierrez', 'kenya.gtz.n@gmail.com', 5533404343, 'Kenya789', '1999-09-22', "");
+VALUES (null, 'Kenya Gutierrez', 'kenya.gtz.n@gmail.com', 5533404343, 'Kenya789', '1999-09-22', "https://res.cloudinary.com/dnnna4gud/image/upload/v1747435914/blank-pp_e1sbed.webp");
 
 -- CREACIÓN DE ESCUELAS
 INSERT INTO escuela (idescuela, esc_nombre, esc_ubicacion, esc_enlace)
@@ -35,19 +35,19 @@ VALUES
 -- CREACIÓN DE CARRERAS
 -- Carrera #1
 INSERT INTO carrera(idcarrera, carr_nombre, carr_evaluacion_prom)
-VALUES (null, 'Ing. Tecnologías de la Información y Comunicaciones', 8);
+VALUES (null, 'Ing. Tecnologías de la Información y Comunicaciones', 0);
 -- Carrera #2
 INSERT INTO carrera(idcarrera, carr_nombre, carr_evaluacion_prom)
-VALUES (NULL, 'Ing. Telemática', 8.5);
+VALUES (NULL, 'Ing. Telemática', 0);
 -- Carrera #3
 INSERT INTO carrera(idcarrera, carr_nombre, carr_evaluacion_prom)
-VALUES (null, 'Lic. Educación Física', 9);
+VALUES (null, 'Lic. Educación Física', 0);
 -- Carrera #4
 INSERT INTO carrera(idcarrera, carr_nombre, carr_evaluacion_prom)
-VALUES (null, 'Lic. Arquitectura', 8.2);
+VALUES (null, 'Lic. Arquitectura', 0);
 -- Carrera #5
 INSERT INTO carrera(idcarrera, carr_nombre, carr_evaluacion_prom)
-VALUES (null, 'Ing. Mecatrónica', 6.1);
+VALUES (null, 'Ing. Mecatrónica', 0);
 
 -- CREACIÓN DE OFERTAS EDUCATIVAS
 INSERT INTO ofertaEducativa(idoferta_educativa, idescuela_fk, idcarrera_fk, ofed_enlace)

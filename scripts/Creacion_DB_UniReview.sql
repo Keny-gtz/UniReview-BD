@@ -72,18 +72,18 @@ CREATE TABLE IF NOT EXISTS `UniReview`.`publicacion` (
   CONSTRAINT `fk_publicaciones_usuario`
     FOREIGN KEY (`idusuario_fk`)
     REFERENCES `UniReview`.`usuario` (`idusuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_publicaciones_escuela1`
     FOREIGN KEY (`idescuela_fk`)
     REFERENCES `UniReview`.`escuela` (`idescuela`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_publicaciones_carrera1`
     FOREIGN KEY (`idcarrera_fk`)
     REFERENCES `UniReview`.`carrera` (`idcarrera`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -101,13 +101,13 @@ CREATE TABLE IF NOT EXISTS `UniReview`.`ofertaEducativa` (
   CONSTRAINT `fk_oferta educativa_escuela1`
     FOREIGN KEY (`idescuela_fk`)
     REFERENCES `UniReview`.`escuela` (`idescuela`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_oferta educativa_carrera1`
     FOREIGN KEY (`idcarrera_fk`)
     REFERENCES `UniReview`.`carrera` (`idcarrera`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
