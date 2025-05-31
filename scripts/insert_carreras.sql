@@ -1,5 +1,20 @@
 -- Carrera #1
 INSERT INTO carrera(idcarrera, carr_nombre, carr_evaluacion_prom)
+VALUES (null, 'Ing. Tecnologías de la Información y Comunicaciones', 0);
+-- Carrera #2
+INSERT INTO carrera(idcarrera, carr_nombre, carr_evaluacion_prom)
+VALUES (NULL, 'Ing. Telemática', 0);
+-- Carrera #3
+INSERT INTO carrera(idcarrera, carr_nombre, carr_evaluacion_prom)
+VALUES (null, 'Lic. Educación Física', 0);
+-- Carrera #4
+INSERT INTO carrera(idcarrera, carr_nombre, carr_evaluacion_prom)
+VALUES (null, 'Lic. Arquitectura', 0);
+-- Carrera #5
+INSERT INTO carrera(idcarrera, carr_nombre, carr_evaluacion_prom)
+VALUES (null, 'Ing. Mecatrónica', 0);
+
+INSERT INTO carrera(idcarrera, carr_nombre, carr_evaluacion_prom)
 VALUES (NULL, 'Lic. En Mercadotecnia', 0);
 
 -- Carrera #2

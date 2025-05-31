@@ -1,8 +1,14 @@
-USE UniReview;
+USE unireview;
 -- SELECT count(*) FROM escuela;
 -- CREACIÓN DE ESCUELAS
 INSERT INTO escuela (idescuela, esc_nombre, esc_ubicacion, esc_enlace)
 VALUES
+(null, 'Instituto Tecnológico de Reynosa', 'Reynosa, Tamaulipas', 'https://www.reynosa.tecnm.mx/'),
+(null,'Centro de Investigación y de Estudios Avanzados del Instituto Politécnico Nacional', 'Ciudad de México', 'https://www.cinvestav.mx/'),
+(null,'Universidad Nacional Autónoma de México', 'Ciudad de México', 'https://www.unam.mx/'),
+(null,'Instituto Tecnológico de Tláhuac', 'Ciudad de México', 'https://tlahuac2.tecnm.mx/'),
+(null,'Escuela Superior de Educación Física', 'Ciudad de México', 'https://www.aefcm.gob.mx/dgenam/ESEF/'), 
+(null,'Enseñanza e Investigación Superior, A.C. (UNIVERSIDAD TECMILENIO)', 'Guadalajara, Jalisco', 'https://www.tecmilenio.mx/es'),
 (null, 'Instituto Tecnológico de Aguascalientes', 'Aguascalientes, Aguascalientes', 'https://aguascalientes.tecnm.mx/'),
 (null, 'Universidad Autónoma de Aguascalientes', 'Aguascalientes, Aguascalientes', 'https://www.uaa.mx/portal/'),
 (null, 'Universidad Politécnica de Aguascalientes', 'Aguascalientes, Aguascalientes', 'https://www.upa.edu.mx/'),

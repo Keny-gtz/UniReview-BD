@@ -11,13 +11,13 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema UniReview
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `UniReview` DEFAULT CHARACTER SET utf8 ;
-USE `UniReview` ;
+-- CREATE SCHEMA IF NOT EXISTS `UniReview` DEFAULT CHARACTER SET utf8 ;
+USE `unireview` ;
 
 -- -----------------------------------------------------
 -- Table `UniReview`.`usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `UniReview`.`usuario` (
+CREATE TABLE IF NOT EXISTS `unireview`.`usuario` (
   `idusuario` INT NOT NULL AUTO_INCREMENT,
   `usu_nombre` VARCHAR(100) NOT NULL,
   `usu_email` VARCHAR(100) NOT NULL,
@@ -32,7 +32,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `UniReview`.`escuela`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `UniReview`.`escuela` (
+CREATE TABLE IF NOT EXISTS `unireview`.`escuela` (
   `idescuela` INT NOT NULL AUTO_INCREMENT,
   `esc_nombre` VARCHAR(100) NOT NULL,
   `esc_ubicacion` VARCHAR(100) NOT NULL,
@@ -44,7 +44,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `UniReview`.`carrera`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `UniReview`.`carrera` (
+CREATE TABLE IF NOT EXISTS `unireview`.`carrera` (
   `idcarrera` INT NOT NULL AUTO_INCREMENT,
   `carr_nombre` VARCHAR(100) NOT NULL,
   `carr_evaluacion_prom` DOUBLE NOT NULL,
@@ -55,7 +55,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `UniReview`.`publicacion`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `UniReview`.`publicacion` (
+CREATE TABLE IF NOT EXISTS `unireview`.`publicacion` (
   `idpublicacion` INT NOT NULL AUTO_INCREMENT,
   `publi_comentario` VARCHAR(830) NOT NULL,
   `publi_fecha` DATE NOT NULL,
@@ -71,17 +71,17 @@ CREATE TABLE IF NOT EXISTS `UniReview`.`publicacion` (
   INDEX `fk_publicaciones_carrera1_idx` (`idcarrera_fk` ASC) VISIBLE,
   CONSTRAINT `fk_publicaciones_usuario`
     FOREIGN KEY (`idusuario_fk`)
-    REFERENCES `UniReview`.`usuario` (`idusuario`)
+    REFERENCES `unireview`.`usuario` (`idusuario`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `fk_publicaciones_escuela1`
     FOREIGN KEY (`idescuela_fk`)
-    REFERENCES `UniReview`.`escuela` (`idescuela`)
+    REFERENCES `unireview`.`escuela` (`idescuela`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE,
   CONSTRAINT `fk_publicaciones_carrera1`
     FOREIGN KEY (`idcarrera_fk`)
-    REFERENCES `UniReview`.`carrera` (`idcarrera`)
+    REFERENCES `unireview`.`carrera` (`idcarrera`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
@@ -90,7 +90,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `UniReview`.`ofertaEducativa`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `UniReview`.`ofertaEducativa` (
+CREATE TABLE IF NOT EXISTS `unireview`.`ofertaEducativa` (
   `idoferta_educativa` INT NOT NULL AUTO_INCREMENT,
   `ofed_enlace` VARCHAR(500) NOT NULL,
   `idescuela_fk` INT NOT NULL,
@@ -100,12 +100,12 @@ CREATE TABLE IF NOT EXISTS `UniReview`.`ofertaEducativa` (
   INDEX `fk_oferta educativa_carrera1_idx` (`idcarrera_fk` ASC) VISIBLE,
   CONSTRAINT `fk_oferta educativa_escuela1`
     FOREIGN KEY (`idescuela_fk`)
-    REFERENCES `UniReview`.`escuela` (`idescuela`)
+    REFERENCES `unireview`.`escuela` (`idescuela`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `fk_oferta educativa_carrera1`
     FOREIGN KEY (`idcarrera_fk`)
-    REFERENCES `UniReview`.`carrera` (`idcarrera`)
+    REFERENCES `unireview`.`carrera` (`idcarrera`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
